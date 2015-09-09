@@ -1,30 +1,22 @@
 
-describe('pigLatin', function() {
-    it("adds ay to words starting with a vowel", function(){
-        expect(pigLatin("i")).to.equal("iay");
+describe('palindromes', function() {
+    it("checks if string reverse is palindrome", function(){
+        expect(palindromes("racecar")).to.equal(true);
     });
 
-    it("if a word begins with a consanant, it moves the first letter to the end and adds ay", function(){
-        expect(pigLatin("taco")).to.equal("acotay");
+    it("checks if string reverse is palindrome with space", function(){
+        expect(palindromes("Hello olleH")).to.equal(true);
     });
 
-    it("if a word begins with two consanants, it moves the first two letters to the end and adds ay", function() {
-        expect(pigLatin("plural")).to.equal("uralplay");
+    it("returns false when its not a palindrome", function(){
+        expect(palindromes("yellow")).to.equal(false);
     });
 
-    it("if a word begins with y, it moves the first letter to the end and adds ay", function() {
-        expect(pigLatin("yellow")).to.equal("ellowyay");
+    it("checks to see if a number is a palindrome", function(){
+        expect(palindromes("123")).to.equal(false);
     });
 
-    it("if a word has qu in the first syllabil, it moves the first letter to the end and adds ay", function() {
-        expect(pigLatin("squeal")).to.equal("ealsquay");
-    });
-
-    it("if a word has qu in the first two letters, it moves the first letter to the end and adds ay", function() {
-        expect(pigLatin("queen")).to.equal("eenquay");
-    });
-
-    it("if a word has qu in the first two letters, it moves the first letter to the end and adds ay", function() {
-        expect(pigLatin("queen squeal yellow")).to.eql("eenquay ealsquay ellowyay");
+    it("checks to see if a number is a palindrome", function(){
+        expect(palindromes("1001")).to.equal(true);
     });
 });
